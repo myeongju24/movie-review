@@ -6,8 +6,9 @@
 | ------------------ | -------- | ----------- |
 | name               | string   | null: false |
 | email              | string   | null: false |
+| password           | string   | null: false |
 | encrypted_password | string   | null: false |
-| favorite_movie_id  | integer  | null: false |
+| favorite_movie     | string   | null: false |
 | favorite_genre_id  | integer  | null: false |
 
 ### Association
