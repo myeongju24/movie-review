@@ -1,0 +1,28 @@
+<div class="container">
+  <h3>投稿画面</h3>
+  <%= form_with model: @review, local: true do |f|%>
+    <div class="field">
+      <%= f.label :title, "映画のタイトル" %><br />
+      <%= f.text_field :title %>
+    </div>
+
+    <div class="field">
+      <%= f.label :points_id, "点数" %><br />
+      <%= f.collection_select(:points_id, Point.all, :id, :name, {}, {class:"points-select"}) %>
+    </div>
+
+    <div class="field">
+      <%= f.label :summary, "一言レビュー" %><br />
+      <%= f.text_area :summary, class: :form_summary %>
+    </div>
+
+    <div class="field">
+      <%= f.label :contents, "レビュー" %><br />
+      <%= f.text_area :contents, class: :form_contents %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "投稿する", class: :form_btn  %>
+    </div>
+  <% end %>
+</div>
