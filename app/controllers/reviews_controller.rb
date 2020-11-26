@@ -21,6 +21,10 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
   end
 
+  def destroy
+    
+  end
+
   def review_params
     params.require(:review).permit(:title, :points_id, :summary, :contents, :image).merge(user_id: current_user.id)
   end
