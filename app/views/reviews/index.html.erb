@@ -2,7 +2,7 @@
   <div class="inner">
     
     <div class="review-index">
-      <%#　ここに投稿したレビュー一覧を表示させる部分テンプレートをおく %>
+      <%= render partial: 'review', collection: @reviews %>
     </div>
   </div>
 </main>
