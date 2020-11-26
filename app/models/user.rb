@@ -17,4 +17,6 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :comments
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :favorite_genre
 end
