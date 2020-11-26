@@ -1,0 +1,11 @@
+<div class="card">
+  <%#画像投稿機能を実装したらこのコメントアウトを外す>
+  <%#= link_to image_tag(review.image, class: :card__img ), review_path(review.id),method: :get %>
+  <div class="card__body">
+    <%= link_to review.title, reviews_path(review.id), method: :get, class: :card__title %>
+    <p class="card__summary">
+      <%= review.summary %>
+    </p>
+    <%#= link_to review.user.name, user_path(review.user), class: :card__user %>
+  </div>
+</div>
