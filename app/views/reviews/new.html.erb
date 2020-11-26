@@ -8,7 +8,7 @@
 
     <div class="field">
       <%= f.label :points_id, "点数" %><br />
-      <%= f.collection_select(:point_id, Point.all, :id, :name, {}, {class:"points-select"}) %>
+      <%= f.collection_select(:points_id, Point.all, :id, :name, {}, {class:"points-select"}) %>
     </div>
 
     <div class="field">
