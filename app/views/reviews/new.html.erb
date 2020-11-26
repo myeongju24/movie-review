@@ -8,7 +8,7 @@
 
     <div class="field">
       <%= f.label :points_id, "点数" %><br />
-      <%= f.text_area :points_id, class: :form_ponts %>
+      <%= f.collection_select(:point_id, Point.all, :id, :name, {}, {class:"points-select"}) %>
     </div>
 
     <div class="field">
