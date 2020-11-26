@@ -12,8 +12,8 @@
     </div>
 
     <div class="field">
-      <%= f.label :points_id, "点数" %><br />
-      <%= f.collection_select(:points_id, Point.all, :id, :name, {}, {class:"points-select"}) %>
+      <%= f.label :points_id, "点数(10点満点、5点が面白いかどうかの基準です)" %><br />
+      <%= f.collection_select(:points_id, Point.all, :id, :name, {}, {class:"points-select"}) %><span>/10点</span>
     </div>
 
     <div class="field">

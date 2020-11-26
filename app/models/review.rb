@@ -7,7 +7,7 @@ class Review < ApplicationRecord
     validates :image
   end
 
-  validates :points_id, numericality: { other_than: 1 }
+  validates :points_id, numericality: { other_than: 11 }
 
   belongs_to :user
   has_one_attached :image
