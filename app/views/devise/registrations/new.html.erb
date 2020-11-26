@@ -32,8 +32,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :favorite_genre %><br />
-    <%= f.text_field :favorite_genre %>
+    <%= f.label :favorite_genre_id %><br />
+    <%= f.collection_select(:favorite_genre_id, FavoriteGenre.all, :id, :name, {}, {class:"favorite-genre-select"}) %>
   </div>
 
 
