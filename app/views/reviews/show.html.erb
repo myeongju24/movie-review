@@ -4,27 +4,21 @@
       <p class="review__hedding">
         <%= @review.title%>
       </p>
-      <%= link_to @review.user.name, user_path(@review.user), class: :review__user %>
+      <%#= link_to @review.user.name, user_path(@review.user), class: :review__user %>
       <% if current_user == @review.user %>
         <div class="review__manage">
-          <%= link_to "編集する", edit_review_path(@review.id), class: :review__btn %>
-          <%= link_to "削除する", review_path(@review.id), method: :delete, class: :review__btn %>
+          <%#= link_to "編集する", edit_review_path(@review.id), class: :review__btn %>
+          <%#= link_to "削除する", review_path(@review.id), method: :delete, class: :review__btn %>
         </div>
       <% end %>
       <div class="review__image" >
-        <%= image_tag @review.image %>
+        <%= image_tag @review.image if @review.image.attached?%>
       </div>
       <div class="review__body">
         <div class="review__detail">
-          <p class="detail__title">映画のタイトル</p>
+          <p class="detail__title">点数</p>
           <p class="detail__message">
-            <%= @review.title %>
-          </p>
-        </div>
-        <div class="review__detail">
-          <p class="detail__title">一言レビュー</p>
-          <p class="detail__message">
-            <%= @review.points_id.name %>
+            <%= @review.point.name %>
           </p>
         </div>
         <div class="review__detail">
@@ -36,7 +30,7 @@
         <div class="review__detail">
           <p class="detail__title">レビュー</p>
           <p class="detail__message">
-            <%= @review.content %>
+            <%= @review.contents %>
           </p>
         </div>
       </div>
