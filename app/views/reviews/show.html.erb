@@ -1,0 +1,45 @@
+<main class="main">
+  <div class="inner">
+    <div class="review__wrapper">
+      <p class="review__hedding">
+        <%= @review.title%>
+      </p>
+      <%= link_to @review.user.name, user_path(@review.user), class: :review__user %>
+      <% if current_user == @review.user %>
+        <div class="review__manage">
+          <%= link_to "編集する", edit_review_path(@review.id), class: :review__btn %>
+          <%= link_to "削除する", review_path(@review.id), method: :delete, class: :review__btn %>
+        </div>
+      <% end %>
+      <div class="review__image" >
+        <%= image_tag @review.image %>
+      </div>
+      <div class="review__body">
+        <div class="review__detail">
+          <p class="detail__title">映画のタイトル</p>
+          <p class="detail__message">
+            <%= @review.title %>
+          </p>
+        </div>
+        <div class="review__detail">
+          <p class="detail__title">一言レビュー</p>
+          <p class="detail__message">
+            <%= @review.points_id.name %>
+          </p>
+        </div>
+        <div class="review__detail">
+          <p class="detail__title">一言レビュー</p>
+          <p class="detail__message">
+            <%= @review.summary %>
+          </p>
+        </div>
+        <div class="review__detail">
+          <p class="detail__title">レビュー</p>
+          <p class="detail__message">
+            <%= @review.content %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
