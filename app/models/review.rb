@@ -10,7 +10,6 @@ class Review < ApplicationRecord
   validates :points_id, numericality: { other_than: 1 }
 
   belongs_to :user
-  has_many :comments, dependent: :destroy
   has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions
