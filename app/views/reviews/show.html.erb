@@ -4,7 +4,7 @@
       <p class="review__hedding">
         <%= @review.title%>
       </p>
-      <%#= link_to @review.user.name, user_path(@review.user), class: :review__user %>
+      <%= link_to @review.user.name, user_path(@review.user), class: :review__user %>
       <% if current_user == @review.user %>
         <div class="review__manage">
           <%= link_to "編集する", edit_review_path(@review.id), class: :review__btn %>
@@ -51,7 +51,7 @@
             <% @comments.each do |comment| %>
               <li class="comments_list">              
                   <%= comment.text%>
-                  <%#= link_to comment.user.name, user_path(comment.user), class: :comment_user %>              
+                  <%= link_to comment.user.name, user_path(comment.user), class: :comment_user %>              
               </li>
             <% end%>
           <% end %>
