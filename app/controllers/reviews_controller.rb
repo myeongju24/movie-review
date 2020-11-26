@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 
-  before_action :find_review, only: [:show, :destroy, :edit]
+  before_action :find_review, only: [:show, :destroy, :edit, :update]
 
   def index
     @reviews = Review.order("created_at DESC")
@@ -36,7 +36,11 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    
+    if @review.update(review_params)
+       redirect_to review_path
+    else
+      render :edit
+    end
   end
 
   private
