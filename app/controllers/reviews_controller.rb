@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
 
+  before_action :find_review, only: [:show, :destroy]
+
   def index
     @reviews = Review.order("created_at DESC")
   end
@@ -18,11 +20,23 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @review = Review.find(params[:id])
   end
+
+  def destroy
+    if current_user == @review.user
+      @review.destroy
+      redirect_to root_path
+    end
+  end
+
+  private
 
   def review_params
     params.require(:review).permit(:title, :points_id, :summary, :contents, :image).merge(user_id: current_user.id)
   end
+
+  def find_review
+    @review = Review.find(params[:id])
+  end  
 
 end
