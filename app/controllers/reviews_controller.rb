@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 
-  before_action :find_review, only: [:show, :destroy]
+  before_action :find_review, only: [:show, :destroy, :edit, :update]
 
   def index
     @reviews = Review.order("created_at DESC")
@@ -26,6 +26,20 @@ class ReviewsController < ApplicationController
     if current_user == @review.user
       @review.destroy
       redirect_to root_path
+    end
+  end
+
+  def edit
+    unless current_user == @review.user
+      redirect_to root_path
+    end
+  end
+
+  def update
+    if @review.update(review_params)
+       redirect_to review_path
+    else
+      render :edit
     end
   end
 
