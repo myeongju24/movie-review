@@ -12,4 +12,8 @@ class Point < ActiveHash::Base
     { id: 10, name: '9' },
     { id: 11, name: '10' }
   ]
+
+  include ActiveHash::Associations
+  has_many :reviews
+
   end
