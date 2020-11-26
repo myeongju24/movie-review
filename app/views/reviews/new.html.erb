@@ -7,6 +7,11 @@
     </div>
 
     <div class="field">
+     <%= f.label :image, "映画の画像" %><br />
+     <%= f.file_field :image %>
+    </div>
+
+    <div class="field">
       <%= f.label :points_id, "点数" %><br />
       <%= f.collection_select(:points_id, Point.all, :id, :name, {}, {class:"points-select"}) %>
     </div>

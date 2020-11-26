@@ -4,6 +4,7 @@ class Review < ApplicationRecord
     validates :title
     validates :summary
     validates :contents
+    validates :image
   end
 
   validates :points_id, numericality: { other_than: 1 }
