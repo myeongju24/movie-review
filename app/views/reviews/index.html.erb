@@ -2,13 +2,13 @@
   <div class="inner">
   <a1>movie-reviewへようこそ</a1>
   <%# ユーザーがサインインした場合の上画面の表示%>
-    <% #if user_signed_in? %>
-      <div class="greeting">
-        <a3>こんにちは</a3>
-        <%#= link_to current_user.name, user_path(current_user), class: :greeting__link%>
-        <a3>さん</a3>
-      </div>
-    <%# end %>
+    <% if user_signed_in? %>
+        <li><%= link_to current_user.nickname, '#', class: "user-nickname" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% else%>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end%>
   <%# ユーザーがサインインした場合の上画面の表示%>
     
     <div class="review-index">
