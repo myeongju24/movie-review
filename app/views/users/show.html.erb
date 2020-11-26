@@ -23,8 +23,8 @@
       <h2 class="page-heading">
         <%= "#{@user.name}さんの投稿"%>
       </h2>
-      <div class="user__card">
-        <%= render partial: 'reviews/review', collection: @user.reviews %>
+      <div class="review-index ">
+        <%= render partial: 'reviews/review', collection: @user.reviews.order("created_at DESC") %>
       </div>
     </div>
   </div>
