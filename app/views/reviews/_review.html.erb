@@ -1,9 +1,9 @@
 <div class="card">
-  <%= image_tag review.image, class: 'review-image' %>
+  <%= link_to image_tag(review.image, class: 'review-image'), review_path(review.id), method: :get %>
   <div class="card__body">
     <%= link_to review.title, review_path(review.id), method: :get, class: :card__title %>
     <p class="card__summary">
-      <%#= review.point.name%>
+      <%= review.points_id%><span>/10点</span>
       <%= review.summary %>
     </p>
     <%= link_to review.user.name, user_path(review.user), class: :card__user %>

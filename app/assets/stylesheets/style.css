@@ -1,0 +1,27 @@
+/* ヘッダー */
+.header {
+  background-color: #f1f8fe;
+  margin-bottom: 48px;
+  padding: 20px 0;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 投稿一覧 */
+
+.review-index {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: calc(100vh - 161px);
+  padding: 10px
+}
+
+p {
+  white-space: pre-wrap;
+}

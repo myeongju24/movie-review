@@ -12,13 +12,13 @@
         </div>
       <% end %>
       <div class="review__image" >
-        <%= image_tag @review.image if @review.image.attached?%>
+        <%= image_tag @review.image %>
       </div>
       <div class="review__body">
         <div class="review__detail">
           <p class="detail__title">点数</p>
           <p class="detail__message">
-            <%#= @review.point.name %>
+            <%= @review.points_id %>
           </p>
         </div>
         <div class="review__detail">
