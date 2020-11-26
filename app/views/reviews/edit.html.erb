@@ -1,5 +1,5 @@
 <div class="container">
-  <h3>投稿画面</h3>
+  <h3>編集画面</h3>
   <%= form_with model: @review, local: true do |f|%>
     <div class="field">
       <%= f.label :title, "映画のタイトル" %><br />
@@ -27,8 +27,8 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "投稿する", class: :form_btn  %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
+      <%= f.submit "編集する", class: :form_btn  %>
+      <%=link_to 'もどる', review_path(@review.id), class:"back-btn" %>
     </div>
   <% end %>
 </div>

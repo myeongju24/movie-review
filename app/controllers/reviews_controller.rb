@@ -30,7 +30,7 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    unless current_user == @item.user
+    unless current_user == @review.user
       redirect_to root_path
     end
   end
